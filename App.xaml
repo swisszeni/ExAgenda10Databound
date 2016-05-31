@@ -1,0 +1,18 @@
+﻿<Application
+    x:Class="ExAgenda10Databound.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExAgenda10Databound"
+    RequestedTheme="Light">
+    <Application.Resources>
+        <local:BoolToVisibilityConverter x:Key="VisibilityConverter" />
+        <local:CategoryToBrushConverter x:Key="CategoryConverter" DefaultBrush="#FFCBC5C5" BusinessBrush="#FFE3E386" PrivateBrush="#FF68C573" EducationBrush="#FFA1A1EE" />
+        <local:CategoryToStringConverter x:Key="CategoryStringConverter" />
+        <local:PriorityToBrushConverter x:Key="PriorityConverter" NormalBrush="Cyan" HighBrush="#FFF76014"/>
+        <local:PriorityToVisibilityConverter x:Key="PrioVisibilityConverter"/>
+        <local:TimeToWeekdayConverter x:Key="WeekdayConverter" Offset="1" />
+        <local:TimeToRowConverter x:Key="TimeConverter" MinutesPerRow="30" Offset="1"/>
+        <local:DurationToRowSpanConverter x:Key="DurationConverter" MinutesPerRow="30"/>
+    </Application.Resources>
+
+</Application>

@@ -1,0 +1,143 @@
+﻿<Grid
+    x:Class="ExAgenda10Databound.AgendaWeek"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExAgenda10Databound"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition MinWidth="100"/>
+        <ColumnDefinition MinWidth="100"/>
+        <ColumnDefinition MinWidth="100"/>
+        <ColumnDefinition MinWidth="100"/>
+        <ColumnDefinition MinWidth="100"/>
+        <ColumnDefinition MinWidth="100"/>
+        <ColumnDefinition MinWidth="100"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+    </Grid.RowDefinitions>
+    
+    
+    <Border Grid.RowSpan="49" Grid.Column="0" BorderBrush="LightGray" BorderThickness="1" Margin="-1,0,0,0"/>
+    <Border Grid.RowSpan="49" Grid.Column="1" BorderBrush="LightGray" BorderThickness="1" Margin="-1,0,0,0"/>
+    <Border Grid.RowSpan="49" Grid.Column="2" BorderBrush="LightGray" BorderThickness="1" Margin="-1,0,0,0"/>
+    <Border Grid.RowSpan="49" Grid.Column="3" BorderBrush="LightGray" BorderThickness="1" Margin="-1,0,0,0"/>
+    <Border Grid.RowSpan="49" Grid.Column="4" BorderBrush="LightGray" BorderThickness="1" Margin="-1,0,0,0"/>
+    <Border Grid.RowSpan="49" Grid.Column="5" BorderBrush="LightGray" BorderThickness="1" Margin="-1,0,0,0"/>
+    <Border Grid.RowSpan="49" Grid.Column="6" BorderBrush="LightGray" BorderThickness="1" Margin="-1,0,0,0"/>
+    <Border Grid.RowSpan="49" Grid.Column="7" BorderBrush="LightGray" BorderThickness="1" Margin="-1,0,0,0"/>
+
+    <Border Grid.ColumnSpan="8" Grid.Row="0" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="1" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="3" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="5" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="7" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="9" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="11" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="13" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="15" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="17" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="19" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="21" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="23" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="25" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="27" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="29" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="31" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="33" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="35" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="37" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="39" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="41" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="43" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="45" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+    <Border Grid.ColumnSpan="8" Grid.Row="47" Grid.RowSpan="2" BorderBrush="LightGray" BorderThickness="1" Margin="0,-1,0,0"/>
+
+    <TextBlock Grid.Column="1" FontSize="24" Margin="3" HorizontalAlignment="Center" Foreground="LightGray">Mo 9.3.</TextBlock>
+    <TextBlock Grid.Column="2" FontSize="24" Margin="3" HorizontalAlignment="Center" Foreground="LightGray">Di 10.3.</TextBlock>
+    <TextBlock Grid.Column="3" FontSize="24" Margin="3" HorizontalAlignment="Center" Foreground="LightGray">Mi 11.3.</TextBlock>
+    <TextBlock Grid.Column="4" FontSize="24" Margin="3" HorizontalAlignment="Center" Foreground="LightGray">Do 12.3.</TextBlock>
+    <TextBlock Grid.Column="5" FontSize="24" Margin="3" HorizontalAlignment="Center" Foreground="LightGray">Fr 13.3.</TextBlock>
+    <TextBlock Grid.Column="6" FontSize="24" Margin="3" HorizontalAlignment="Center" Foreground="LightGray">Sa 14.3.</TextBlock>
+    <TextBlock Grid.Column="7" FontSize="24" Margin="3" HorizontalAlignment="Center" Foreground="LightGray">So 15.3.</TextBlock>
+                
+    <TextBlock Grid.Row="1" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">0</TextBlock>
+    <TextBlock Grid.Row="3" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">1</TextBlock>
+    <TextBlock Grid.Row="5" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">2</TextBlock>
+    <TextBlock Grid.Row="7" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">3</TextBlock>
+    <TextBlock Grid.Row="9" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">4</TextBlock>
+    <TextBlock Grid.Row="11" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">5</TextBlock>
+    <TextBlock Grid.Row="13" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">6</TextBlock>
+    <TextBlock Grid.Row="15" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">7</TextBlock>
+    <TextBlock Grid.Row="17" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">8</TextBlock>
+    <TextBlock Grid.Row="19" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">9</TextBlock>
+    <TextBlock Grid.Row="21" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">10</TextBlock>
+    <TextBlock Grid.Row="23" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">11</TextBlock>
+    <TextBlock Grid.Row="25" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">12</TextBlock>
+    <TextBlock Grid.Row="27" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">13</TextBlock>
+    <TextBlock Grid.Row="29" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">14</TextBlock>
+    <TextBlock Grid.Row="31" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">15</TextBlock>
+    <TextBlock Grid.Row="33" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">16</TextBlock>
+    <TextBlock Grid.Row="35" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">17</TextBlock>
+    <TextBlock Grid.Row="37" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">18</TextBlock>
+    <TextBlock Grid.Row="39" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">19</TextBlock>
+    <TextBlock Grid.Row="41" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">20</TextBlock>
+    <TextBlock Grid.Row="43" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">21</TextBlock>
+    <TextBlock Grid.Row="45" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">22</TextBlock>
+    <TextBlock Grid.Row="47" Grid.RowSpan="2" FontSize="24" Margin="10,0" VerticalAlignment="Center" Foreground="LightGray">23</TextBlock>
+        
+</Grid>
