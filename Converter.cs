@@ -5,7 +5,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
 
-namespace ExAgenda10Databound
+namespace ExAgenda10DataboundMultiwindow
 {
     public class BoolToVisibilityConverter : IValueConverter
     {

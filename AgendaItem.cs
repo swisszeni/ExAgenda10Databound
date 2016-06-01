@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace ExAgenda10Databound
+namespace ExAgenda10DataboundMultiwindow
 {
     public enum Priority { None, Normal, High };
     public enum Category { None, Business, Private, Education };

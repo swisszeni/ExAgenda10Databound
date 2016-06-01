@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
-namespace ExAgenda10Databound
+namespace ExAgenda10DataboundMultiwindow
 {
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.

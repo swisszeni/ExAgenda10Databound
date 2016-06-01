@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="ExAgenda10Databound.App"
+    x:Class="ExAgenda10DataboundMultiwindow.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ExAgenda10Databound"
+    xmlns:local="using:ExAgenda10DataboundMultiwindow"
     RequestedTheme="Light">
     <Application.Resources>
         <local:BoolToVisibilityConverter x:Key="VisibilityConverter" />
