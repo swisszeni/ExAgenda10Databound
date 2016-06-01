@@ -7,8 +7,8 @@
     <ProjectGuid>{2023826E-6C76-470F-B7B7-6715FEC223A4}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExAgenda10Databound</RootNamespace>
-    <AssemblyName>ExAgenda10Databound</AssemblyName>
+    <RootNamespace>ExAgenda10DataboundMultiwindow</RootNamespace>
+    <AssemblyName>ExAgenda10DataboundMultiwindow</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
@@ -99,6 +99,9 @@
     <Compile Include="AgendaItemDetailPage.xaml.cs">
       <DependentUpon>AgendaItemDetailPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AgendaItemTimeDetailPage.xaml.cs">
+      <DependentUpon>AgendaItemTimeDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AgendaWeek.xaml.cs">
       <DependentUpon>AgendaWeek.xaml</DependentUpon>
     </Compile>
@@ -109,6 +112,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NavigationAwareFrame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AgendaItemDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AgendaItemTimeDetailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

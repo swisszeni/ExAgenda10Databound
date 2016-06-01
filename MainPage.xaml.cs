@@ -103,7 +103,7 @@ namespace ExAgenda10DataboundMultiwindow
             int newViewId = 0;
             await newView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                Frame frame = new Frame();
+                Frame frame = new NavigationAwareFrame();
                 frame.Navigate(typeof(AgendaItemDetailPage), itemContext);
                 Window.Current.Content = frame;
                 // You have to activate the window in order to show it later.

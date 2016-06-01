@@ -34,5 +34,9 @@ namespace ExAgenda10DataboundMultiwindow
             DataContext = e.Parameter;
         }
 
+        private void Time_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AgendaItemTimeDetailPage), DataContext);
+        }
     }
 }

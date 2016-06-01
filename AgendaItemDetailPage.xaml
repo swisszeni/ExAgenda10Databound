@@ -22,7 +22,11 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
-            <TextBlock Text="{Binding Time}" Grid.Column="0"/>
+            <TextBlock Grid.Column="0" Tapped="Time_Tapped">
+                <Underline>
+                    <Run Text="{Binding Time}" />
+                </Underline>
+            </TextBlock>
             <TextBlock HorizontalAlignment="Right" Text="{Binding Path=Category, Converter={StaticResource CategoryStringConverter}}" Grid.Column="1"/>
             <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Margin="0, 10, 0, 0">
                 <SymbolIcon Symbol="Attach" Margin="4" Foreground="Black" Visibility="{Binding Path=HasAttachments, Converter={StaticResource VisibilityConverter}}"/>
