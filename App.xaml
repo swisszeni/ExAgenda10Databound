@@ -13,6 +13,7 @@
         <local:TimeToWeekdayConverter x:Key="WeekdayConverter" Offset="1" />
         <local:TimeToRowConverter x:Key="TimeConverter" MinutesPerRow="30" Offset="1"/>
         <local:DurationToRowSpanConverter x:Key="DurationConverter" MinutesPerRow="30"/>
+        <local:DateTimeToTimeSpanConverter x:Key="DateTimeToTimeSpanConverter" />
     </Application.Resources>
 
 </Application>

@@ -157,4 +157,35 @@ namespace ExAgenda10DataboundMultiwindow
             throw new NotImplementedException();
         }
     }
+
+
+    // As from http://bretstateham.com/binding-to-the-new-xaml-datepicker-and-timepicker-controls-to-the-same-datetime-value/
+    public class DateTimeToTimeSpanConverter : IValueConverter
+    {
+
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            try
+            {
+                DateTime dt = (DateTime)value;
+                //Get the timespan from subtracting the date from the original DateTime
+                //this returns a timespan representing the time component of the DateTime
+                TimeSpan ts = dt - dt.Date;
+                return ts;
+            }
+            catch (Exception ex)
+            {
+                return TimeSpan.MinValue;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            //It just doesn't make sense to convert back to a datetime. 
+            //There is no concept representation of date in the incoming TimeSpan value.  
+            throw new NotImplementedException();
+        }
+    }
+
+
 }

@@ -16,6 +16,7 @@ namespace ExAgenda10DataboundMultiwindow
         {
             this.NavigationFailed += OnNavigationFailed;
             this.Navigated += OnNavigated;
+
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
         }
 

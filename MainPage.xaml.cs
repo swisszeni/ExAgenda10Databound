@@ -76,17 +76,33 @@ namespace ExAgenda10DataboundMultiwindow
 
         private void MenuFlyoutItemDetails_Click(object sender, RoutedEventArgs e)
         {
-            NavigateToDetailPage(flyoutMenuContext);
+            ShowDetailPageInCurrentWindow(flyoutMenuContext);
             flyoutMenuContext = null;
         }
 
         private void MenuFlyoutItemNewWindow_Click(object sender, RoutedEventArgs e)
         {
-            ShowDetailPageInNewWindow(flyoutMenuContext);
+            int viewId;
+            // Check if Window for this Item already exists
+            if(((App)Application.Current).SecondaryViews.TryGetValue(flyoutMenuContext, out viewId))
+            {
+                // Window already existent, bring to foreground
+                SwitchToDetailPageInWindow(viewId);
+            } else
+            {
+                // Window not existent, create
+                ShowDetailPageInNewWindow(flyoutMenuContext);
+            }
+            
             flyoutMenuContext = null;
         }
 
-        private void Project_Click(object sender, RoutedEventArgs e)
+        private void StartProjectiongButton_Click(object sender, RoutedEventArgs e)
+        {
+            ProjectionManager
+        }
+
+        private void StopProjectiongButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -94,6 +110,33 @@ namespace ExAgenda10DataboundMultiwindow
         private void NavigateToDetailPage(AgendaItem itemContext)
         {
             this.Frame.Navigate(typeof(AgendaItemDetailPage), itemContext);
+        }
+
+        private async void ShowDetailPageInCurrentWindow(AgendaItem itemContext)
+        {
+            CoreApplicationView newView = CoreApplication.CreateNewView();
+            int newViewId = 0;
+            await newView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                Frame frame = new NavigationAwareFrame();
+                frame.Navigate(typeof(AgendaItemDetailPage), itemContext);
+                Window.Current.Content = frame;
+                // You have to activate the window in order to show it later.
+                Window.Current.Activate();
+
+                ApplicationView secondaryAppView = ApplicationView.GetForCurrentView();
+                secondaryAppView.Title = itemContext.Text;
+                secondaryAppView.Consolidated += ((App)Application.Current).OnConsolidating;
+
+                newViewId = secondaryAppView.Id;
+            });
+
+            await ApplicationViewSwitcher.SwitchAsync(newViewId, ((App)Application.Current).MainViewId);
+        }
+
+        private async void SwitchToDetailPageInWindow(int viewId)
+        {
+            await ApplicationViewSwitcher.SwitchAsync(viewId);
         }
 
         // Docu: https://msdn.microsoft.com/en-us/windows/uwp/layout/show-multiple-views
@@ -109,9 +152,18 @@ namespace ExAgenda10DataboundMultiwindow
                 // You have to activate the window in order to show it later.
                 Window.Current.Activate();
 
-                newViewId = ApplicationView.GetForCurrentView().Id;
+                ApplicationView secondaryAppView = ApplicationView.GetForCurrentView();
+                secondaryAppView.Title = itemContext.Text;
+                secondaryAppView.Consolidated += ((App)Application.Current).OnConsolidating;
+
+                newViewId = secondaryAppView.Id;
             });
             bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewId);
+
+            if(viewShown)
+            {
+                ((App)Application.Current).SecondaryViews.Add(itemContext, newViewId);
+            }
         }
     }
 }

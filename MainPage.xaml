@@ -106,12 +106,12 @@
             </local:AgendaWeek>
         </ScrollViewer>
         <CommandBar Grid.Row="1">
-            <AppBarButton Label="Project" Click="Project_Click" x:Name="StartProjectiongButton">
+            <AppBarButton Label="Project" Click="StartProjectiongButton_Click" x:Name="StartProjectiongButton">
                 <AppBarButton.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE2B4;"/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton Label="Stop projecting" Click="Project_Click" Visibility="Collapsed" x:Name="StopProjectiongButton">
+            <AppBarButton Label="Stop projecting" Click="StopProjectiongButton_Click" Visibility="Collapsed" x:Name="StopProjectiongButton">
                 <AppBarButton.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE2B3;"/>
                 </AppBarButton.Icon>

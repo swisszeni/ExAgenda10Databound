@@ -26,5 +26,12 @@ namespace ExAgenda10DataboundMultiwindow
         {
             this.InitializeComponent();
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            DataContext = e.Parameter;
+        }
     }
 }

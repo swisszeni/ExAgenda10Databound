@@ -7,47 +7,41 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Vertical" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="20">
-        <Border Background="{Binding Path=Category, Converter={StaticResource CategoryConverter}}" >
-            <TextBlock Text="Detail" />
-        </Border>
-        
-        <TextBlock Text="{Binding Text}" FontSize="30" Margin="0, 20, 0, 0"/>
-        <Grid Margin="0, 10, 0, 0">
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="auto" />
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Tapped="Time_Tapped">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Row="0">
+            <Border Background="{Binding Path=Category, Converter={StaticResource CategoryConverter}}" >
+                <TextBlock Text="Detail" />
+            </Border>
+
+            <TextBlock Text="{Binding Text}" FontSize="30" Margin="0, 20, 0, 0"/>
+            <Grid Margin="0, 10, 0, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Tapped="Time_Tapped">
                 <Underline>
                     <Run Text="{Binding Time}" />
                 </Underline>
-            </TextBlock>
-            <TextBlock HorizontalAlignment="Right" Text="{Binding Path=Category, Converter={StaticResource CategoryStringConverter}}" Grid.Column="1"/>
-            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Margin="0, 10, 0, 0">
-                <SymbolIcon Symbol="Attach" Margin="4" Foreground="Black" Visibility="{Binding Path=HasAttachments, Converter={StaticResource VisibilityConverter}}"/>
-                <SymbolIcon  Symbol="Important" Margin="4" Foreground="Black" Visibility="{Binding Path=IsImportant, Converter={StaticResource VisibilityConverter}}"/>
-            </StackPanel>
-            <!--public string Text { get; set; }
-        public DateTime StartTime { get; set; }
-        public int Duration { get; set; }
-        public string Time
-        {
-            get
-            {
-                return String.Format("{0} - {1}",
-                    StartTime.ToString("HH:mm"),
-                    StartTime.AddMinutes(Duration).ToString("HH:mm"));
-            }
-        }
-        public Category Category { get; set; }
-        public Priority Priority { get; set; }
-        public bool IsImportant { get; set; }
-        public bool HasAttachments { get; set; }-->
-        </Grid>
-    </StackPanel>
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Right" Text="{Binding Path=Category, Converter={StaticResource CategoryStringConverter}}" Grid.Column="1"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Margin="0, 10, 0, 0">
+                    <SymbolIcon Symbol="Attach" Margin="4" Foreground="Black" Visibility="{Binding Path=HasAttachments, Converter={StaticResource VisibilityConverter}}"/>
+                    <SymbolIcon  Symbol="Important" Margin="4" Foreground="Black" Visibility="{Binding Path=IsImportant, Converter={StaticResource VisibilityConverter}}"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+        <Button x:Name="CloseViewButton" Grid.Row="1" HorizontalAlignment="Right" Content="Close" Click="CloseViewButton_Click" Visibility="Collapsed"/>
+        <Button x:Name="SwitchCloseViewButton" Grid.Row="1" HorizontalAlignment="Left" Content=" Switch and Close" Click="SwitchCloseViewButton_Click" Visibility="Collapsed"/>
+    </Grid>
+    
 </Page>

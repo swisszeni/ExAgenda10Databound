@@ -5,9 +5,11 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -31,7 +33,12 @@ namespace ExAgenda10DataboundMultiwindow
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            SecondaryViews = new Dictionary<AgendaItem, int>();
         }
+
+        public Dictionary<AgendaItem, int> SecondaryViews { get; private set; }
+        public int MainViewId { get; private set; }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
@@ -77,6 +84,8 @@ namespace ExAgenda10DataboundMultiwindow
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+            MainViewId = ApplicationView.GetForCurrentView().Id;
         }
 
         /// <summary>
@@ -91,6 +100,17 @@ namespace ExAgenda10DataboundMultiwindow
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        public void OnConsolidating(object sender, ApplicationViewConsolidatedEventArgs args)
+        {
+            ApplicationView sendingView = (ApplicationView)sender;
+            var result = SecondaryViews.Where(x => x.Value == sendingView.Id).FirstOrDefault();
+            if(result.Key != null)
+            {
+                // Ok, entry found
+                SecondaryViews.Remove(result.Key);
+            }
         }
     }
 }

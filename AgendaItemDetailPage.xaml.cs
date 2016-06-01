@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -32,11 +34,34 @@ namespace ExAgenda10DataboundMultiwindow
             base.OnNavigatedTo(e);
 
             DataContext = e.Parameter;
+            ToggleCloseButtonVisibility();
+        }
+
+        private void ToggleCloseButtonVisibility()
+        {
+            CloseViewButton.Visibility = CoreApplication.GetCurrentView().IsMain ? Visibility.Collapsed : Visibility.Visible;
+            SwitchCloseViewButton.Visibility = CoreApplication.GetCurrentView().IsMain ? Visibility.Collapsed : Visibility.Visible;
         }
 
         private void Time_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AgendaItemTimeDetailPage), DataContext);
+        }
+
+        private void CloseViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!CoreApplication.GetCurrentView().IsMain)
+            {
+                Window.Current.Close();
+            }
+        }
+
+        private async void SwitchCloseViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!CoreApplication.GetCurrentView().IsMain)
+            {
+                await ApplicationViewSwitcher.SwitchAsync(((App)Application.Current).MainViewId, ApplicationView.GetForCurrentView().Id, ApplicationViewSwitchingOptions.ConsolidateViews);
+            }
         }
     }
 }
