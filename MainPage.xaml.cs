@@ -27,6 +27,7 @@ namespace ExAgenda10DataboundMultiwindow
     public sealed partial class MainPage : Page
     {
         private bool projecting = false;
+        private int projectionViewId = 0;
 
         public MainPage()
         {
@@ -43,6 +44,8 @@ namespace ExAgenda10DataboundMultiwindow
             }
                 
         }
+
+        #region Actionhandling
 
         private void AgendaItem_Holding(object sender, HoldingRoutedEventArgs e)
         {
@@ -97,20 +100,74 @@ namespace ExAgenda10DataboundMultiwindow
             flyoutMenuContext = null;
         }
 
+
+
         private void StartProjectiongButton_Click(object sender, RoutedEventArgs e)
         {
-            ProjectionManager
+            ShowProjection();
         }
 
         private void StopProjectiongButton_Click(object sender, RoutedEventArgs e)
         {
+            EndProjection();
+        }
 
+        #endregion
+
+        private void ToggleProjectionButtonVisibility()
+        {
+            StartProjectiongButton.Visibility = projecting ? Visibility.Collapsed : Visibility.Visible;
+            StopProjectiongButton.Visibility = projecting ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void NavigateToDetailPage(AgendaItem itemContext)
         {
             this.Frame.Navigate(typeof(AgendaItemDetailPage), itemContext);
         }
+
+        #region Projection
+
+        private async void ShowProjection()
+        {
+            if (projectionViewId == 0)
+            {
+                CoreApplicationView newView = CoreApplication.CreateNewView();
+                await newView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+                {
+                    Frame frame = new NavigationAwareFrame();
+                    frame.Navigate(typeof(ProjectionPage), this);
+                    Window.Current.Content = frame;
+                    // You have to activate the window in order to show it later.
+                    Window.Current.Activate();
+
+                    ApplicationView secondaryAppView = ApplicationView.GetForCurrentView();
+                    secondaryAppView.Consolidated += ((App)Application.Current).OnConsolidating;
+
+                    projectionViewId = secondaryAppView.Id;
+                });
+            }
+
+            await ProjectionManager.StartProjectingAsync(projectionViewId, ((App)Application.Current).MainViewId);
+
+            projecting = true;
+            ToggleProjectionButtonVisibility();
+        }
+
+        public async void EndProjection()
+        {
+            await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                // Run on main UI thread
+                await ProjectionManager.StopProjectingAsync(projectionViewId, ((App)Application.Current).MainViewId);
+                projecting = false;
+                projectionViewId = 0;
+                ToggleProjectionButtonVisibility();
+            });
+        }
+
+        #endregion
+
+        #region Multiwindow
 
         private async void ShowDetailPageInCurrentWindow(AgendaItem itemContext)
         {
@@ -165,5 +222,7 @@ namespace ExAgenda10DataboundMultiwindow
                 ((App)Application.Current).SecondaryViews.Add(itemContext, newViewId);
             }
         }
+
+        #endregion
     }
 }
